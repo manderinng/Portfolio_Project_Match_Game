@@ -1,0 +1,194 @@
+:root {
+  --card-width: 125px;
+  --card-height: 175px;
+}
+
+body {
+  margin: 0;
+  background: url(https://wallpapers.com/images/hd/the-walking-dead-rick-with-revolver-8r6pij6hcjzrgs98.jpg);
+  background-position: center;
+  background-size: cover;
+  color: red;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900
+  text-shadow: 2px 2px 3px rgb(177, 177, 177);
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+#ui-container {
+  text-align: center;
+}
+
+#ui-container h3 {
+  margin: 0;
+  display: inline-block;
+  font-size: 40px;
+  text-align: center;
+}
+
+#ui-container h3:first-child {
+  margin-right: 40px;
+}
+
+#card-container {
+  font-size: 0;
+  margin: 50px auto;
+  width: calc((var(--card-width) + 2vw + 12px) * 4);
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  margin: 1vw;
+  width: var(--card-width);
+  height: var(--card-height);
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+
+/* Style the two logo images themselves. */
+.card-down,
+.card-up {
+  /* Take images out of the flow. */
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  /* When facing away from the screen each image should be hidden. */
+  backface-visibility: hidden;
+  border-radius: 5px;
+  transition-duration: 0.3s;
+}
+
+.card-down {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6AcyJrrIREb5EprF9UtmPwzQrMjN9bHny0A&s);
+  background-position: center;
+  background-size: cover;
+}
+
+.card-up {
+  background-position: center;
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+
+.flipped .card-down {
+  transform: rotateY(180deg);
+}
+
+.flipped .card-up {
+  transform: rotateY(0deg);
+}
+
+.image-1 .card-up {
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e3e7a655-2ffa-40b1-baa9-a064a37d1876/da1pby9-2920fd1d-e11f-4b5f-ae19-644ebac859ac.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2UzZTdhNjU1LTJmZmEtNDBiMS1iYWE5LWEwNjRhMzdkMTg3NlwvZGExcGJ5OS0yOTIwZmQxZC1lMTFmLTRiNWYtYWUxOS02NDRlYmFjODU5YWMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.7XLGfoSwv5mzVIknwJQiurAyp2oguXmF5lubBZHdFNY), 
+  linear-gradient(#72dbf4, #72dbf4);
+  background-position: right;
+}
+
+.image-2 .card-up {
+  background-image: url(data:image/jpeg;base64,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),
+   linear-gradient(#72dbf4, #72dbf4);
+   background-position: right;
+}
+
+.image-3 .card-up {
+  background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxEHBhUTExMWEhMUFREWGRcSFRUSGBgfFxcWGxsaGhUZHSgjGBolHRkYITEhJSktMC4uGiAzODcsNygtLisBCgoKDg0OGhAQGy8lHyUtLS8tNy0tOC0xLS0tLSstKy0tLS0tKy0tLS0tLS0tLS0tLS0tKy0tLTUtLS8tLS0tK//AABEIAKgBKwMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABQYDBAcCAf/EADoQAAIBAgQCCAMGBQUBAAAAAAABAgMRBAUSIQYxE0FRYXGBkbEiMqEUNFJy0eEHI5LB8DOCorLxFf/EABkBAQADAQEAAAAAAAAAAAAAAAABAgMEBf/EAB4RAQEAAgMBAQEBAAAAAAAAAAABAhEDITESQTIi/9oADAMBAAIRAxEAPwDn4AJesAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErsFj4GwkcTmzlJX6OOpc+bdl9L8wrnl8y1lybg+WMoqdWeiEkmlCzk01tu1ZfX9JXFcFUKnyTnB2SttJXXXvvv4lso0JV3svU9vB1Evl+qKfTivJy3uOPZhltbLqlqsHHnZ84vnykvDxNQ6pnuXLMsunBRi52ehyV7Pxtt1q/ecurQVOdk9VutKSXlqSfqkWjq4uT7jwACWoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXD+HcL1KztyVNX693L9ink5wZjVg8+hrlopz1Rk3e3yy03SW+9tu8iqcuP1hY7JSjoppdaSXoj2fE7o+nMqhcUnGvK/O7fruciziU5ZnPXFRldXindR2Vo83yXV23OtcUZjTyrBSqNpyelKLdrvq5Jv0u7JnHcTUdbEyk3dylKV+27udGPinDhrK1jABZ0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMlChPE1NMIuUuyKv/wCInsu4Uq1aqdW0I9cU7zfdtsvUrcpPTboPAeNeN4XpOXOGqne976HZeemxYDTynAxy7AxpxSil1LZK/wDnM3DC3dZuY/xAr4n7VJNWoamtt9+ScvJ7dW/ba1KOuZwlisTUjJXi7xafYtipT4Og1tVkuy8U/wBC+PLPKnHUmlQBv5tlVTKqqU7NSvplHk7Wvt1PdGgay7XAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGTD0XiMRGEecpKK83Yxk1wjh+mzlP8ABGUvPaK/7X8iLdTZVxy3L4ZbhlCC8W+cn2snMlw3SVtTW0eXj+36EaTfD+KhicB8Lu4SnGXc037qzOSd3bJJgGlmmZ08soapu7fyxXOT7u7vLJQeK+9T/NL3ZiPVSWuo32tv1PJmhF8Q5b/9LAWXzwvKPe7fL5/oc+W51U5znuG+y5vUj1atS8JfF/e3kb8OX4vjWgADdYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtPA1P8AmVZd0I+upv2RVi78F0tGUuX4pyfokvdMz5b/AJRl4m68+joSfYm/RFWo4qpgauulNwlyenr8Vya8SxZo7YCfgvq0VspxTqomO4klxbjJRt0iv26IX9rfQ1ftNTFY2M5yc5Xju+5+3casYKLM2H+8R/NH3RprRhhZ6tQAORQKxxtg9VGFVLdPRLwe69Hf+os5V+NMelTjQSd3pm31W+JJeqv5F+Pf0nH1UgAdbQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6Jw9S6HJKS7Y6v6m5f3OdvkdPwMOiwNOPZCC9Iox5vIrkx5or4CfgvdFbLTi6XT4aUe1e26KsRxeJw8fIq3q+Rnwavi4fmj7owm1lavj4eL9maXxa+LIADkYhUuOYRVSlK3xtTTduaWm2/c2/UtpVOOmtVJda6Tq6np6/LkacX9Jx9VUAHU0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB6pU3WqqK5yaj6ux1O1jn3DOH+0Z1T7I3m/8Aby/5WOgnPzXuRTJr5hX+z4Rvr5Lxf+X8iskvxBNLQr7vU7eFr+5EFuKdL4eBsZf9+h+ZGuZ8D98h+aPuXvi1Wc81YdJSa7U16o9H05GCocmROd1XUxEU23pjtdt839OSJd8yDzV3xr7lH2O2N60wASqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACxcG1IUcTUlJ2emMVs+ttvfq5It0MTCpOykm+xNMoeSw+aXgiaweOhgMQpTTal8O29m+u3kY54b7Rcf1i40npxlKzs1GT+v7GOlPXTT7kZM9rQzDEqyuoqye6b6zUpvo1sRhdRjjyarbp26RX3V1e3PyN3XKOY0IpwcVUqQlpjpS+FyhbZX+Se/k7kYqqJbD16dbFUXUlN65xjBRhe00knJvvV7vnZtuxpbuLcmUs3KnD5K+l2572K5n+YSwufyoJz3pxqLe0bfL1PtT6jzl+Iq4rGwp65NTnGLV77NpPn3XMLhpX7x1uLHR4Zozp31Vp7L4oRgo+V95rvjc5zmtaNbFvRyV1d7N2b3sdrzmq8Pk9aUecaNaSttyhJo4RzNsLa1xt/QAGiwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJbJX/Kl4r2NjFx1Tg+yT+sWTn8L61GdarRnBOo/wCZGUkpbRsmldbO7T779xP8URnU4fra0l0VeOnSrJwbio+L+OzfamZ5Zd6Vyy6sUMAFHKGnnGJlQy1/FUUHKGuNKo6Tkr2tqs0urmmbhixdD7ThZQ/Emv0+onqLNxFYbMo5nxB0kafRXhJNa1NdXJRhFQW3JK25f+C8peNxMqrbiqe0Wvxvk++y3t13RyzIm4ZtBPb50/6Zfod64OhGPDtNpWvrb73rkr/RE5nDNsXFOInDhuvGUGm6co6oWcHq+G+7vHZ8ny7WcbO08ZVVR4Xrt7fBZeLkkvrY4sW4/HVgAA0XAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABnwGMqZfi41actM4O6fPuaafNNXVi1Zhx1UzPKehdNQnJxUpwacZK/xLRKLcfJ3T6ynAiyUs2nQAYuN5qS0U2+xNmvl9bpKdnzXsesfLThn32RoYOp0eIXY9mWk3GmOO8a16+EeF4ghNL4JyvfqTaaafm7+Z2rhKXR8O0k9tqsud9lOV231czmhmpYqpRg1GcoqVk1FtXs7rl33K3tnh/mrtx5mtKnlU6DknOThqjz0pNS37L2W3ecmJzGzliITcm5yabbk7tvtuQZfj8dHHd7oADRoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfU7SAAnAAc7jaeZ/6K8f7MjgDbDx08X8pfB1Okw67Vs/IzAGd9YZzVoQtan0dVoAnD1fivbwADVu/9k=), 
+  linear-gradient(#72dbf4, #72dbf4);
+  background-position: right;
+}
+
+.image-4 .card-up {
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e3e7a655-2ffa-40b1-baa9-a064a37d1876/da4k90e-930ea589-2912-415e-89ea-b6b1a450ce73.png/v1/fill/w_1244,h_700,q_70,strp/negan_from_the_walking_dead_by_reverendtundra_da4k90e-350t-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTEyNSIsInBhdGgiOiJcL2ZcL2UzZTdhNjU1LTJmZmEtNDBiMS1iYWE5LWEwNjRhMzdkMTg3NlwvZGE0azkwZS05MzBlYTU4OS0yOTEyLTQxNWUtODllYS1iNmIxYTQ1MGNlNzMucG5nIiwid2lkdGgiOiI8PTIwMDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.UfHcBQUw_1vwI1zzJRFZYNqHjm29AdEG1GJVZ1l3GZI), 
+  linear-gradient(#72dbf4, #72dbf4);
+  background-position: right;
+}
+
+.image-5 .card-up {
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e3e7a655-2ffa-40b1-baa9-a064a37d1876/da0d18s-81afb273-1e6b-4ad2-a161-2bfdf59e8817.png/v1/fill/w_1244,h_700,q_70,strp/michonne_from_the_walking_dead_by_reverendtundra_da0d18s-350t-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTEyNSIsInBhdGgiOiJcL2ZcL2UzZTdhNjU1LTJmZmEtNDBiMS1iYWE5LWEwNjRhMzdkMTg3NlwvZGEwZDE4cy04MWFmYjI3My0xZTZiLTRhZDItYTE2MS0yYmZkZjU5ZTg4MTcucG5nIiwid2lkdGgiOiI8PTIwMDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.O6GvbUx320uUVKy10j2K4MFwBrmFhEwnO4O8Mi0nVJ8), 
+  linear-gradient(#72dbf4, #72dbf4);
+  background-position: right;
+}
+
+.image-6 .card-up {
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e3e7a655-2ffa-40b1-baa9-a064a37d1876/da2g6oq-d92048e6-c766-43e3-94fe-0d0a199621f1.png/v1/fill/w_1244,h_700,q_70,strp/maggie_greene_from_the_walking_dead_by_reverendtundra_da2g6oq-350t-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTEyNSIsInBhdGgiOiJcL2ZcL2UzZTdhNjU1LTJmZmEtNDBiMS1iYWE5LWEwNjRhMzdkMTg3NlwvZGEyZzZvcS1kOTIwNDhlNi1jNzY2LTQzZTMtOTRmZS0wZDBhMTk5NjIxZjEucG5nIiwid2lkdGgiOiI8PTIwMDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.zumrfeCs3QulxN7nj7ZBNMvGhykz0P2RLk4fQLVrv0w),
+   linear-gradient(#72dbf4, #72dbf4);
+   background-position: left;
+   
+}
+
+.glow {
+  border: 1px solid transparent;
+  transition: border 0.1s linear, box-shadow 0.1s linear;
+}
+
+@keyframes border-glow {
+  from {
+    border: 2px solid transparent;
+    box-shadow: none;
+  }
+
+  80% {
+    border-color: blue;
+    box-shadow: 0 0 10px blue;
+  }
+
+  to {
+    border: 2px solid transparent;
+    box-shadow: none;
+  }
+}
+
+.border-glow {
+  animation: border-glow 1s;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.reset-btn {
+  margin: 0 0 30px 0;
+  padding: 20px 40px;
+  background-color: rgb(226, 237, 226);
+  color:red;
+  border: 0px;
+  border-radius: 10px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.5em;
+}
+
+.reset-btn:hover {
+  cursor: pointer;
+  background-color: #534a3d;
+}
+.glow {
+  box-shadow: 0 0 20px gold;
+  transition: box-shadow 0.2s;
+}
+@keyframes glisten {
+  0% {
+    box-shadow: 0 0 20px white;
+  }
+  25% {
+    box-shadow: 0 0 20px rgb(198, 198, 121);
+  }
+  50% {
+    box-shadow: 0 0 20px rgb(221, 211, 99);
+  }
+  100% {
+    box-shadow: 0 0 20px gold;
+  }
+}
+
+.glisten {
+  animation: glisten 2.5s ease-in-out;
+  border: 2px solid gold;
+}
